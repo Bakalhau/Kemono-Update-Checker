@@ -68,3 +68,38 @@ class ContentCreator:
             })
         
         return tuple(posts)
+    
+    def get_profile(self):
+            profile = list()
+            
+    def read_posts(self, path=""):
+        posts = []
+        try: 
+            with open(path + f"logs/{self.name}_{self.service}.csv") as f:
+                posts = tuple(csv.DictReader(f))
+                return posts
+        except FileNotFoundError:
+            return None
+    
+    def get_new_posts(self): 
+        posts = []
+        if self.present_posts == self.cached_posts: return None
+        
+        for post in self.present_posts:
+            if self.cached_posts and post in self.cached_posts: 
+                break
+            posts.append(post)
+        
+        return tuple(posts)
+    
+    def rewrite_logs(self, path=""):
+        if path != "" and path[-1] != "/":
+            path += "/"
+        
+        with open(path + f"logs/{self.name}_{self.service}.csv", "w") as f:
+            fieldnames = ["title", "date", "url", "image"]
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            
+            writer.writeheader()
+            for post in self.present_posts:
+                writer.writerow(post)
