@@ -17,3 +17,18 @@ class ContentCreator:
         self.new_posts = self.get_new_posts()
         
         ContentCreator.all.append(self)
+    
+    @classmethod
+    def read_csv(cls, path=""):
+        if path != "" and path[-1] != "/":
+            path += "/"
+        
+        with open(path + "creators.csv") as f:
+            creators = tuple(csv.DictReader(f))
+            for i in range(len(creators)):
+                creator = creators[i]
+                
+                if creator["service"].lower() not in cls.services:
+                    raise ValueError(f"Invalid service: \"{creator['service']}\" for creator: \"{creator['name']}\" at line {i+2}")
+                
+                cls(creator["name"], creator["service"], creator["id"])
