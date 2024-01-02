@@ -1,5 +1,6 @@
 import requests
 import os
+import random
 from dotenv import load_dotenv
 from datetime import datetime
 from classes import ContentCreator
@@ -8,6 +9,7 @@ load_dotenv()
 
 DIR = os.getenv('DIR')
 DISCORD_WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK_URL')
+EMBED_COLOR = os.getenv('EMBED_COLOR')
 
 def main():
     ContentCreator.read_csv(DIR)
@@ -38,13 +40,22 @@ def main():
 
                     post_date = discord_date.strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
+                    # Generate a random hexadecimal color
+                    if EMBED_COLOR:
+                        r = random.randint(0, 255)
+                        g = random.randint(0, 255)
+                        b = random.randint(0, 255)
+
+                        # Format the values as decimal string
+                        EMBED_COLOR = "{}{}{}".format(r, g, b)
+
                     # Create discord embed
                     embed = {
                             "embeds": [
                                 {
                                 "title": post_title,
                                 "url": post_url,
-                                "color": 3093151,
+                                "color": EMBED_COLOR,
                                 "author": {
                                     "name": profile_name,
                                     "url": profile_link,
