@@ -38,6 +38,28 @@ def main():
 
                     post_date = discord_date.strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
+                    # Create discord embed
+                    embed = {
+                            "embeds": [
+                                {
+                                "title": post_title,
+                                "url": post_url,
+                                "color": 3093151,
+                                "author": {
+                                    "name": profile_name,
+                                    "url": profile_link,
+                                    "icon_url": profile_icon
+                                },
+                                "timestamp": post_date,
+                                "image": {
+                                    "url": post_image
+                                }
+                                }
+                            ],
+                            }
+                # Make webhook request to discord    
+                request = requests.post(DISCORD_WEBHOOK_URL,json=embed)
+
             while True: 
                 creator.rewrite_logs()
                 break
