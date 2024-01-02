@@ -41,13 +41,15 @@ def main():
                     post_date = discord_date.strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
                     # Generate a random hexadecimal color
-                    if EMBED_COLOR:
+                    embed_color = EMBED_COLOR
+
+                    if not embed_color:
                         r = random.randint(0, 255)
                         g = random.randint(0, 255)
                         b = random.randint(0, 255)
 
                         # Format the values as decimal string
-                        EMBED_COLOR = "{}{}{}".format(r, g, b)
+                        embed_color = "{}{}{}".format(r, g, b)
 
                     # Create discord embed
                     embed = {
@@ -55,7 +57,7 @@ def main():
                                 {
                                 "title": post_title,
                                 "url": post_url,
-                                "color": EMBED_COLOR,
+                                "color": embed_color,
                                 "author": {
                                     "name": profile_name,
                                     "url": profile_link,
@@ -68,9 +70,9 @@ def main():
                                 }
                             ],
                             }
-                # Make webhook request to discord    
-                request = requests.post(DISCORD_WEBHOOK_URL,json=embed)
-
+                    # Make webhook request to discord    
+                    request = requests.post(DISCORD_WEBHOOK_URL,json=embed)
+                    print(request)
             while True: 
                 creator.rewrite_logs()
                 break
