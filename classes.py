@@ -32,3 +32,39 @@ class ContentCreator:
                     raise ValueError(f"Invalid service: \"{creator['service']}\" for creator: \"{creator['name']}\" at line {i+2}")
                 
                 cls(creator["name"], creator["service"], creator["id"])
+    
+    def __str__(self): 
+        return f"name: {self.name}, service: {self.service}, id: {self.id}"
+    
+    def get_posts(self): 
+        posts = list()
+        
+        homepage_file = requests.get(f"https://kemono.party/{self.service}/user/{self.id}")
+        
+        homepage_code = BeautifulSoup(homepage_file.text, "html.parser")
+        
+        brute_posts = homepage_code.find_all("article", {"class": "post-card"})
+
+        for brute_post in brute_posts:
+            # Post title
+            title = brute_post.find("header").string.strip()
+            
+            # Post date
+            date = brute_post.find("time").string.strip()
+            
+            # Post image
+            image_container = brute_post.find("div", {"class": "post-card__image-container"})
+            image_element = image_container.find("img") if image_container else None
+            image = "https:" + image_element.get("src", "") if image_element else ""
+            
+            # Post url
+            url = "https://kemono.party" + brute_post.find("a")["href"]
+            
+            posts.append({
+                "title": title,
+                "date": date,
+                "url": url,
+                "image": image,
+            })
+        
+        return tuple(posts)
