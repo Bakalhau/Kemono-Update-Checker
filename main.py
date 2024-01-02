@@ -1,6 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
+from datetime import datetime
 from classes import ContentCreator
 
 load_dotenv()
@@ -19,6 +20,23 @@ def main():
         elif len(creator.new_posts) > 0:
             for post in creator.new_posts:
                 print(f"New: {post['title']}, date: {post['date']}, url: {post['url']}")
+
+                if DISCORD_WEBHOOK_URL:
+                    # Get post title, url, date and image
+                    post_title = post['title']
+                    post_url = post['url']
+                    post_date = post['date']
+                    post_image = post['image']
+
+                    # Get profile link, icon and name from creator    
+                    profile_link = (f"https://kemono.party/{creator.service}/user/{creator.id}")
+                    profile_icon = (f"https://img.kemono.su/icons/patreon/{creator.id}")
+                    profile_name = (f"{creator.name}")
+
+                    # Convert date to discord format
+                    discord_date = datetime.strptime(post_date, "%Y-%m-%d %H:%M:%S")
+
+                    post_date = discord_date.strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
             while True: 
                 creator.rewrite_logs()
