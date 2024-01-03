@@ -6,7 +6,7 @@ import re
 
 class ContentCreator:
     all = list()
-    services = ("patreon", "fanbox")
+    services = ("onlyfans", "fansly")
     
     def __init__(self, name, service, id):
         self.name = name
