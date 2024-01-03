@@ -27,8 +27,7 @@ A tool to check new updates from your favorite kemono content creators.
     Change the values of the variables in `.env` as needed.
     Read the comments to guide you. Note that `.env` should be in the root
     directory of this repository.
-### How get Discord Webhook Url
-	![[webhook.gif]]
+    ![How get Discord Webhook Url](tutorial/webhook.gif)
 
 3. Configure your creators on `creators.csv`:
 
@@ -36,7 +35,7 @@ A tool to check new updates from your favorite kemono content creators.
     name,service,id
     NAME OF CREATOR,TYPE OF SERVICE (Patreon/Fanbox/etc), ID FROM CREATOR (Get on URL ADRESS)
     ```
-    ![[kemono.png]]
+    ![How get Name, Type and ID](tutorial/kemono.png)
 
 4. Run it!
 
@@ -65,8 +64,7 @@ A tool to check new updates from your favorite kemono content creators.
     # New: Reze from Chainsaw Man 💥✨,2023-12-22 00:48:44,https://kemono.party/patreon/user/5626292/post/95086844,https://img.kemono.su/thumbnail/data/be/e1/bee1712f401ce4cfc8c542bad9af816cc16004daca06a60c70eb052b45749434.png
     ```
 
-    On discord:
-    ![[embed.png]]
+    ![Embed on discord](tutorial/embed.png)
 
 5. Running it continuously
 
@@ -127,7 +125,7 @@ A tool to check new updates from your favorite kemono content creators.
     ## On Windows:
 
     Well, I'm not a Windows user, so I don't know how to do it, but I believe there are several ways. I'm sure you can do it, I trust your potential!
-    ![[good_luck.gif]]
+    ![Good Luck!](tutorial/good_luck.gif)
 
 ## Notes
 
