@@ -27,6 +27,8 @@ A tool to check new updates from your favorite kemono content creators.
     Change the values of the variables in `.env` as needed.
     Read the comments to guide you. Note that `.env` should be in the root
     directory of this repository.
+
+    **How get Discord Webhook Url**
     ![How get Discord Webhook Url](tutorial/webhook.gif)
 
 3. Configure your creators on `creators.csv`:
@@ -35,6 +37,8 @@ A tool to check new updates from your favorite kemono content creators.
     name,service,id
     NAME OF CREATOR,TYPE OF SERVICE (Patreon/Fanbox/etc), ID FROM CREATOR (Get on URL ADRESS)
     ```
+
+    **How get Name, Type and ID**
     ![How get Name, Type and ID](tutorial/kemono.png)
 
 4. Run it!
@@ -52,10 +56,8 @@ A tool to check new updates from your favorite kemono content creators.
     If you want to test if it's working, you can delete some posts from the cache, in the folder `logs/nameofcreator_service.csv`:
     ```csv
     title,date,url,image
-    ~~[$10 Tier] Pool Party 2B Stickers/Prints!,2023-12-27 22:45:01,https://kemono.party/patreon/user/5626292/post/95370667,https://img.kemono.su/thumbnail/data/95/07/9507c7604637d5489165f864d436e1cd8cc02a4f76de5711179290b847dfa294.png
-    Reze from Chainsaw Man 💥✨,2023-12-22 00:48:44,https://kemono.party/patreon/user/5626292/post/95086844,https://img.kemono.su/thumbnail/data/be/e1/bee1712f401ce4cfc8c542bad9af816cc16004daca06a60c70eb052b45749434.png~~
-    POOL PARTY JINX STICKERS!,2023-12-20 22:32:58,https://kemono.party/patreon/user/5626292/post/95021951,https://img.kemono.su/thumbnail/data/59/c7/59c712494d62e3ae087e5a964bc30ec71ae197c6bda94c61a4ac6a274d0ab72c.png
-    [$10 Tier] Pool Party Jinx Sticker Sale!,2023-12-20 22:32:44,https://kemono.party/patreon/user/5626292/post/95022006,https://img.kemono.su/thumbnail/data/59/c7/59c712494d62e3ae087e5a964bc30ec71ae197c6bda94c61a4ac6a274d0ab72c.png
+    [$10 Tier] Pool Party 2B Stickers/Prints!,2023-12-27 22:45:01,https://kemono.party/patreon/user/5626292/post/95370667,https://img.kemono.su/thumbnail/data/95/07/9507c7604637d5489165f864d436e1cd8cc02a4f76de5711179290b847dfa294.png
+    Reze from Chainsaw Man 💥✨,2023-12-22 00:48:44,https://kemono.party/patreon/user/5626292/post/95086844,https://img.kemono.su/thumbnail/data/be/e1/bee1712f401ce4cfc8c542bad9af816cc16004daca06a60c70eb052b45749434.png
     ```
 
     ```console
@@ -63,7 +65,8 @@ A tool to check new updates from your favorite kemono content creators.
     # New: [$10 Tier] Pool Party 2B Stickers/Prints!,2023-12-27 22:45:01,https://kemono.party/patreon/user/5626292/post/95370667,https://img.kemono.su/thumbnail/data/95/07/9507c7604637d5489165f864d436e1cd8cc02a4f76de5711179290b847dfa294.png
     # New: Reze from Chainsaw Man 💥✨,2023-12-22 00:48:44,https://kemono.party/patreon/user/5626292/post/95086844,https://img.kemono.su/thumbnail/data/be/e1/bee1712f401ce4cfc8c542bad9af816cc16004daca06a60c70eb052b45749434.png
     ```
-
+    **Example of embed in discord**
+    
     ![Embed on discord](tutorial/embed.png)
 
 5. Running it continuously
@@ -125,18 +128,9 @@ A tool to check new updates from your favorite kemono content creators.
     ## On Windows:
 
     Well, I'm not a Windows user, so I don't know how to do it, but I believe there are several ways. I'm sure you can do it, I trust your potential!
+
     ![Good Luck!](tutorial/good_luck.gif)
 
 ## Notes
 
-### It also works for Coomer.party, check out the Coomer branch! 
-
-
-
-    
-
-
-
-
-
-    
+### It also works for Coomer.party, check out the Coomer branch!
