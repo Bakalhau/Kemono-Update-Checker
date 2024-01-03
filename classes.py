@@ -39,7 +39,7 @@ class ContentCreator:
     def get_posts(self): 
         posts = list()
         
-        homepage_file = requests.get(f"https://kemono.party/{self.service}/user/{self.id}")
+        homepage_file = requests.get(f"https://coomer.party/{self.service}/user/{self.id}")
         
         homepage_code = BeautifulSoup(homepage_file.text, "html.parser")
         
@@ -58,7 +58,7 @@ class ContentCreator:
             image = "https:" + image_element.get("src", "") if image_element else ""
             
             # Post url
-            url = "https://kemono.party" + brute_post.find("a")["href"]
+            url = "https://coomer.party" + brute_post.find("a")["href"]
             
             posts.append({
                 "title": title,
