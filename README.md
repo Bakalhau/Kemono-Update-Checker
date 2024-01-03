@@ -3,7 +3,7 @@ A tool to check new updates from your favorite kemono content creators.
 
 ## Table of contents
 - [Requirements](#requirements)
-- [How to use](#default-behavior)
+- [How to use](#how-to-use)
 - [Notes](#notes)
 
 ## Requirements
