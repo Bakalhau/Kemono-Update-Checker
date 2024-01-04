@@ -32,7 +32,7 @@ def main():
 
                     # Get profile link, icon and name from creator    
                     profile_link = (f"https://kemono.party/{creator.service}/user/{creator.id}")
-                    profile_icon = (f"https://img.kemono.su/icons/patreon/{creator.id}")
+                    profile_icon = (f"https://img.kemono.su/icons/{creator.service}/{creator.id}")
                     profile_name = (f"{creator.name}")
 
                     # Convert date to discord format
