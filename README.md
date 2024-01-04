@@ -61,7 +61,7 @@ A tool to check new updates from your favorite kemono content creators.
     ```
 
     ```console
-    user@host:szuru$ python3 main.py
+    user@host:kemono_checker$ python3 main.py
     # New: [$10 Tier] Pool Party 2B Stickers/Prints!,2023-12-27 22:45:01,https://kemono.party/patreon/user/5626292/post/95370667,https://img.kemono.su/thumbnail/data/95/07/9507c7604637d5489165f864d436e1cd8cc02a4f76de5711179290b847dfa294.png
     # New: Reze from Chainsaw Man 💥✨,2023-12-22 00:48:44,https://kemono.party/patreon/user/5626292/post/95086844,https://img.kemono.su/thumbnail/data/be/e1/bee1712f401ce4cfc8c542bad9af816cc16004daca06a60c70eb052b45749434.png
     ```
@@ -94,8 +94,8 @@ A tool to check new updates from your favorite kemono content creators.
 
     [Service]
     Type=oneshot
-    WorkingDirectory=/home/user/kemonoparty-checker
-    ExecStart=/usr/bin/python3 /home/user/kemonoparty-checker/main.py
+    WorkingDirectory=/home/user/kemono_checker
+    ExecStart=/usr/bin/python3 /home/user/kemono_checker/main.py
     ```
 
     Now we need to create a timer to run the service from time to time, we can do this with:
