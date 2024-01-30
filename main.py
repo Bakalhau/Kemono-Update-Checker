@@ -43,16 +43,14 @@ def main():
 
                     post_date = discord_date.strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
-                    # Generate a random hexadecimal color
                     embed_color = EMBED_COLOR
 
                     if not embed_color:
-                        r = random.randint(0, 255)
-                        g = random.randint(0, 255)
-                        b = random.randint(0, 255)
+                        # Generate a random hexadecimal color
+                        color = "%06x" % random.randint(0, 0xFFFFFF)
 
                         # Format the values as decimal string
-                        embed_color = "{}{}{}".format(r, g, b)
+                        embed_color = int(color, 16)
 
                     # Create discord embed
                     embed = {
