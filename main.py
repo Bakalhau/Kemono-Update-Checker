@@ -1,6 +1,7 @@
 import requests
 import os
 import random
+from time import sleep
 from dotenv import load_dotenv
 from datetime import datetime
 from classes import ContentCreator
@@ -73,6 +74,7 @@ def main():
                     # Make webhook request to discord    
                     request = requests.post(DISCORD_WEBHOOK_URL,json=embed)
                     print(request)
+                    sleep(10)
             while True: 
                 creator.rewrite_logs()
                 break
