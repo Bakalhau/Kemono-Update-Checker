@@ -37,6 +37,8 @@ def main():
                     profile_name = (f"{creator.name}")
 
                     # Convert date to discord format
+                    post_date = post_date.split(".")[0]
+
                     discord_date = datetime.strptime(post_date, "%Y-%m-%d %H:%M:%S")
 
                     post_date = discord_date.strftime("%Y-%m-%dT%H:%M:%S.000Z")
